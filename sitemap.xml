@@ -7,23 +7,19 @@
   </url>
 
   <url>
-    <loc>https://www.juliankasch.de/impressum.html</loc>
-    <priority>0.3</priority>
+    <loc>https://www.juliankasch.de/agb.html</loc>
   </url>
 
   <url>
     <loc>https://www.juliankasch.de/datenschutz.html</loc>
-    <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://www.juliankasch.de/agb.html</loc>
-    <priority>0.3</priority>
+    <loc>https://www.juliankasch.de/impressum.html</loc>
   </url>
 
   <url>
     <loc>https://www.juliankasch.de/eltern-einwilligung.html</loc>
-    <priority>0.3</priority>
   </url>
 
 </urlset>
