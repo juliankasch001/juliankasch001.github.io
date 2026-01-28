@@ -1,12 +1,27 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/eltern-einwilligung-form.html">
-  <link rel="canonical" href="/eltern-einwilligung-form.html">
-  <title>Weiterleitung</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weiterleitung…</title>
+
+  <link rel="canonical" href="/eltern-einwilligung-form.html" />
+
+  <script>
+    // Sofort weiterleiten – ohne Zwischenrendering
+    location.replace("/eltern-einwilligung-form.html");
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/eltern-einwilligung-form.html">
+  </noscript>
+
+  <style>
+    /* Falls doch kurz gerendert wird: bleibt dunkel */
+    html, body { margin:0; height:100%; background:#0b0e12; color:#F2F5F8; }
+  </style>
 </head>
 <body>
-  <p>Weiterleitung… <a href="/eltern-einwilligung-form.html">Hier klicken</a></p>
+  <p style="padding:16px;">Weiterleitung… <a href="/eltern-einwilligung-form.html">Hier klicken</a></p>
 </body>
 </html>
