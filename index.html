@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Julian Kasch – Physique & Lifestyle Coaching</title>
+  <meta name="description" content="Physique & Lifestyle Coaching mit Struktur. Zwei Wege: Elite (Fortgeschrittene) und Foundation (Anfänger). Limitierte Plätze." />
+
+  <style>
+    :root{
+      --bg:#0b0e12;
+      --bg2:#0f141b;
+
+      --silver1:#F2F5F8;
+      --silver2:#C9D2DD;
+      --silver3:#8C98A6;
+
+      --accent:#4da3ff;
+      --accentSoft:rgba(77,163,255,.18);
+
+      --text:rgba(242,245,248,.92);
+      --muted:rgba(201,210,221,.78);
+
+      --line:rgba(140,152,166,.22);
+      --card:rgba(255,255,255,.045);
+      --card2:rgba(255,255,255,.06);
+
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --radius:22px;
+      --radius2:28px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 25% 10%, rgba(242,245,248,.06), transparent 60%),
+        radial-gradient(900px 600px at 80% 30%, rgba(201,210,221,.04), transparent 55%),
+        radial-gradient(900px 520px at 72% 12%, var(--accentSoft), transparent 58%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #090b0f 100%);
+      letter-spacing:.2px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(11,14,18,.78), rgba(11,14,18,.46));
+      border-bottom:1px solid rgba(140,152,166,.18);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:900; letter-spacing:1.6px;
+      text-transform:uppercase;
+      font-size:14px;
+      color:var(--silver1);
+    }
+    .brand .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), #9bc9ff);
+      box-shadow: 0 0 18px rgba(77,163,255,.55), 0 0 42px rgba(77,163,255,.20);
+    }
+    .links{
+      display:flex; gap:18px; align-items:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .links a{padding:10px 10px; border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.04); color:var(--silver1)}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:14px;
+      border:1px solid rgba(201,210,221,.26);
+      background: linear-gradient(180deg, rgba(242,245,248,.10), rgba(255,255,255,.03));
+      box-shadow: 0 10px 30px rgba(0,0,0,.38);
+      color:var(--silver1);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+      font-size:12px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .cta:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.45);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.18), 0 12px 40px rgba(0,0,0,.48);
+    }
+    .burger{display:none}
+
+    .hero{padding:70px 0 34px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:start;
+    }
+    .panel{
+      border:1px solid rgba(140,152,166,.20);
+      background: linear-gradient(180deg, var(--card2), rgba(255,255,255,.025));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .heroLeft{padding:34px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(140,152,166,.22);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:16px;
+      text-transform:uppercase;
+      letter-spacing:.8px;
+    }
+    .kicker span{
+      width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), #9bc9ff);
+      box-shadow: 0 0 18px rgba(77,163,255,.55), 0 0 42px rgba(77,163,255,.25);
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      background: linear-gradient(180deg, var(--silver1), var(--silver2) 55%, var(--accent));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .sub{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
+      max-width:58ch;
+    }
+
+    .heroBtns{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btnPrimary{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid rgba(77,163,255,.55);
+      background: linear-gradient(180deg, rgba(77,163,255,.45), rgba(77,163,255,.15));
+      color:var(--silver1);
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      box-shadow: 0 0 0 1px rgba(77,163,255,.45), 0 18px 46px rgba(0,0,0,.55);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .btnGhost{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid rgba(140,152,166,.22);
+      background: rgba(255,255,255,.02);
+      color:var(--silver2);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .btnPrimary:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.8), 0 0 38px rgba(77,163,255,.45), 0 22px 60px rgba(0,0,0,.65);
+    }
+    .btnGhost:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.35);
+      box-shadow: 0 14px 42px rgba(0,0,0,.45);
+    }
+
+    .trust{
+      margin-top:18px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+    .pill{
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(140,152,166,.20);
+      background: rgba(255,255,255,.02);
+    }
+
+    .heroRight{
+      padding:34px 22px 22px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+      text-align:center;
+    }
+    .heroRight .logo{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding-top:0;
+    }
+    .heroRight .logo img{
+      width:100%;
+      max-width:560px;
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 18px 30px rgba(0,0,0,.60));
+      opacity:.98;
+    }
+
+    .miniCard{
+      border-radius: var(--radius);
+      border:1px solid rgba(140,152,166,.18);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+      width:100%;
+    }
+    .miniTitle{
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin:0 0 10px;
+      color:var(--silver2);
+      font-size:12px;
+    }
+    .miniText{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    section{padding:40px 0}
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; margin-bottom:18px;
+    }
+    h2{
+      margin:0;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      font-size:20px;
+      color:var(--silver1);
+    }
+    .hint{color:var(--muted); font-size:14px; line-height:1.4; max-width:62ch}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid rgba(140,152,166,.18);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--silver2);
+    }
+    .card p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
+    .card:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.45);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.25), 0 20px 60px rgba(0,0,0,.55);
+    }
+
+    .line{
+      height:1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity:.6;
+      margin:22px 0;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .offer{
+      border:1px solid rgba(140,152,166,.18);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding:18px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+    .offerTop{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:8px;
+    }
+
+    .tag{
+      font-size:11px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(140,152,166,.20);
+      background: rgba(255,255,255,.02);
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    button.tag{
+      appearance:none;
+      -webkit-appearance:none;
+      outline:none;
+      font:inherit;
+      line-height:normal;
+    }
+    .tag:hover{
+      border-color: rgba(77,163,255,.40);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.12);
+      color: var(--silver1);
+    }
+
+    .offer h3{
+      margin:0;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:16px;
+      color:var(--silver1);
+    }
+    .offer p{margin:10px 0 0; color:var(--muted); line-height:1.6; font-size:14px}
+    .offer:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.45);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.22), 0 20px 60px rgba(0,0,0,.55);
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:14px;
+    }
+    .about .card{padding:22px}
+    .about ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    form{display:grid; gap:10px}
+    label{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.9px; font-weight:800}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(140,152,166,.20);
+      background: rgba(255,255,255,.02);
+      color:var(--text);
+      outline:none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    select{
+      appearance:none;
+      -webkit-appearance:none;
+      cursor:pointer;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(77,163,255,.55);
+      box-shadow: 0 0 0 3px rgba(77,163,255,.10);
+    }
+    .note{color:var(--muted); font-size:13px; line-height:1.5}
+
+    footer{
+      padding:26px 0 36px;
+      border-top:1px solid rgba(140,152,166,.18);
+      color:var(--muted);
+      font-size:12px;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+    .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    footer a:hover{color:var(--silver1)}
+
+    @media (max-width: 940px){
+      .heroGrid{grid-template-columns:1fr}
+      h1{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .contactGrid{grid-template-columns:1fr}
+      .heroRight .logo img{max-width:520px}
+    }
+    @media (max-width: 720px){
+      .links{display:none}
+      .burger{display:inline-flex}
+      .brand{font-size:13px}
+      h1{font-size:34px}
+      .heroRight .logo img{max-width:460px}
+    }
+
+    .detail-modal{position:fixed; inset:0; display:none; z-index:9999;}
+    .detail-modal.open{display:block;}
+    .detail-backdrop{
+      position:absolute; inset:0;
+      background: rgba(0,0,0,.58);
+      backdrop-filter: blur(10px);
+    }
+    .detail-panel{
+      position:relative;
+      width:min(880px, calc(100% - 2rem));
+      margin: 7vh auto;
+      border-radius: 22px;
+      border: 1px solid rgba(140,152,166,.24);
+      background: linear-gradient(180deg, rgba(15,20,27,.92), rgba(11,14,18,.92));
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      overflow:hidden;
+    }
+    .detail-head{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:14px;
+      padding:18px 18px 14px;
+      border-bottom:1px solid rgba(140,152,166,.18);
+    }
+    .detail-kicker{
+      font-size:12px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .detail-title{
+      margin:0;
+      text-transform:uppercase;
+      letter-spacing:1.1px;
+      font-size:18px;
+      color:var(--silver1);
+    }
+    .detail-close{
+      width:38px; height:38px;
+      border-radius:14px;
+      border:1px solid rgba(140,152,166,.20);
+      background: rgba(255,255,255,.03);
+      color: var(--silver1);
+      font-size:22px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .detail-close:hover{
+      border-color: rgba(77,163,255,.40);
+      box-shadow: 0 0 0 1px rgba(77,163,255,.10);
+    }
+    .detail-body{
+      padding:16px 18px 20px;
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .detail-body h4{
+      margin:14px 0 8px;
+      color: var(--silver2);
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+    }
+    .detail-body ul{
+      margin:8px 0 12px 18px;
+      padding:0;
+    }
+    .detail-body li{margin:6px 0;}
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>Julian Kasch</span>
+        </div>
+
+        <div class="links">
+          <a href="/">Start</a>
+          <a href="#ansatz">Ansatz</a>
+          <a href="#leistungen">Leistung</a>
+          <a href="#preise">Investition</a>
+          <a href="#ueber">Über</a>
+          <a href="#kontakt">Bewerbung</a>
+        </div>
+
+        <a class="cta burger" href="#kontakt">Bewerben</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div class="panel heroLeft">
+          <div class="kicker"><span></span> Physique + Lifestyle Coaching</div>
+
+          <h1>Struktur.<br/>Physique.<br/>Lifestyle.</h1>
+
+          <p class="sub">
+            Zwei klare Wege: <strong>Foundation</strong> (Anfänger) für einen sauberen Start – und <strong>Elite</strong> (Fortgeschrittene) für maximale Präzision.
+            Ruhig. Direkt. Ohne Ablenkung.
+          </p>
+
+          <div class="heroBtns">
+            <a class="btnPrimary" href="#preise">Modelle ansehen</a>
+            <a class="btnGhost" href="#kontakt">Bewerbung starten</a>
+          </div>
+
+          <div class="trust">
+            <div class="pill">Elite: max. 10 Plätze</div>
+            <div class="pill">Struktur statt Chaos</div>
+            <div class="pill">Alltagstauglich</div>
+          </div>
+        </div>
+
+        <div class="panel heroRight">
+          <div class="logo">
+            <img src="logo/logo-jk.png" alt="Julian Kasch Logo">
+          </div>
+
+          <div class="miniCard">
+            <p class="miniTitle">Kurz & klar</p>
+            <p class="miniText">Du brauchst kein neues „Programm“. Du brauchst Standards, die bleiben.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="ansatz">
+    <div class="wrap">
+      <div class="sectionHead">
+        <h2>Mein Ansatz</h2>
+        <div class="hint">Struktur ist das Fundament. Training ist das Werkzeug. Lifestyle ist die Konsequenz.</div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Struktur im Alltag</h3>
+          <p>Routinen, Prioritäten, Klarheit. Fortschritt entsteht nicht aus Motivation – sondern aus Wiederholung.</p>
+        </div>
+        <div class="card">
+          <h3>Technik & Kontrolle</h3>
+          <p>Saubere Ausführung, Spannung, Kontrolle. Damit Fortschritt stabil und verletzungsarm bleibt.</p>
+        </div>
+        <div class="card">
+          <h3>Konsequente Umsetzung</h3>
+          <p>Weniger Optionen. Mehr Fokus. Entscheidungen werden getroffen – und umgesetzt.</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="card">
+        <h3>Coaching bedeutet Führung</h3>
+        <p>
+          Du bekommst eine klare Struktur – Training, Ernährung und Alltag greifen ineinander.
+          Keine Flut an Optionen, kein ständiger Neustart.
+          Wir arbeiten mit Prinzipien, die du langfristig trägst.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="sectionHead">
+        <h2>Leistung</h2>
+        <div class="hint">Zwei Modelle. Gleiche Haltung: Klarheit, Struktur, Umsetzung.</div>
+      </div>
+
+      <div class="grid2">
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Elite Coaching</h3>
+            <button class="tag" type="button" data-service="elite">Limitiert</button>
+          </div>
+          <p>
+            Für fortgeschrittene Athleten (Männer & Frauen), die Präzision und Führung auf Premium-Niveau wollen.
+            Limitierte Kapazität: <strong>max. 10 aktive Plätze</strong>.
+          </p>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Foundation Coaching</h3>
+            <button class="tag" type="button" data-service="foundation">Anfänger</button>
+          </div>
+          <p>
+            Für Einsteiger (0–2 Jahre): sauberer Start mit Struktur. Basics, Routinen und Umsetzung – ohne Chaos, ohne Dogma.
+          </p>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Entwicklung & Identität</h3>
+            <button class="tag" type="button" data-service="identity">Transformation</button>
+          </div>
+          <p>
+            Physische und mentale Entwicklung durch klare Standards, wiederholte Umsetzung und langfristige Perspektive.
+          </p>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Wie wir arbeiten</h3>
+            <button class="tag" type="button" data-service="prozess">Ablauf</button>
+          </div>
+          <p>
+            Wenige Schritte: Bewerbung → kurzer Abgleich → Start mit Struktur.
+            Du bekommst klare nächste Schritte – kein Rätselraten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preise">
+    <div class="wrap">
+      <div class="sectionHead">
+        <h2>Investition</h2>
+        <div class="hint">Klare Modelle. Klare Erwartungen. Struktur, die bleibt.</div>
+      </div>
+
+      <div class="grid2">
+        <!-- FOUNDATION -->
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Foundation Coaching · Online</h3>
+            <span class="tag" style="cursor:default;">Anfänger</span>
+          </div>
+
+          <p>
+            Für 0–2 Jahre Trainingserfahrung: Du bekommst Grundlagen, Struktur und Routine – so, dass Training und Ernährung
+            im Alltag wirklich funktionieren.
+          </p>
+
+          <h4 style="margin-top:14px;">Leistungsumfang</h4>
+          <ul class="note">
+            <li><strong>1× monatlich</strong> 1:1 Call (45 Minuten)</li>
+            <li>Startstruktur: Trainingsplan + Ernährungsgrundstruktur</li>
+            <li>Monatliche Anpassung nach klaren Kriterien</li>
+            <li>WhatsApp Support (<strong>Mo–Fr</strong>, klare Reaktionszeiten)</li>
+            <li>Fokus: Basics, Routinen, Konstanz</li>
+          </ul>
+
+          <div class="line"></div>
+
+          <p>
+            <strong>Investition:</strong> 179 € / Monat<br>
+            <strong>Mindestlaufzeit:</strong> 3 Monate
+          </p>
+
+          <button class="btnPrimary" type="button" onclick="document.location='#kontakt'">
+            Foundation wählen
+          </button>
+        </div>
+
+        <!-- ELITE -->
+        <div class="offer">
+          <div class="offerTop">
+            <h3>Elite Coaching · Online</h3>
+            <span class="tag" style="cursor:default;">Max. 10 Plätze</span>
+          </div>
+
+          <p>
+            Limitierte Premium-Betreuung für fortgeschrittene Athleten: klare Führung, präzise Anpassungen,
+            Struktur als Lebensstil – ohne Ablenkung.
+          </p>
+
+          <h4 style="margin-top:14px;">Leistungsumfang</h4>
+          <ul class="note">
+            <li><strong>2× monatlich</strong> 1:1 Strategie-Call (je 45 Minuten)</li>
+            <li>Individuelle Trainings- & Ernährungsstruktur (phasenorientiert)</li>
+            <li>Monatliche Analyse & Anpassungen nach klaren Kriterien</li>
+            <li>WhatsApp Support (<strong>Mo–Fr</strong>, klare Reaktionszeiten)</li>
+            <li>Fokus: Präzision, Umsetzung, Lifestyle-Integration</li>
+          </ul>
+
+          <div class="line"></div>
+
+          <p>
+            <strong>Investition:</strong> 299 € / Monat<br>
+            <strong>Mindestlaufzeit:</strong> 3 Monate<br>
+            <strong>Kapazität:</strong> max. 10 aktive Athleten gleichzeitig
+          </p>
+
+          <button class="btnPrimary" type="button" onclick="document.location='#kontakt'">
+            Elite wählen
+          </button>
+
+          <p class="note">Wenn Elite voll ist, ist optional eine Warteliste möglich (freiwillig).</p>
+        </div>
+      </div>
+
+      <!-- ✅ WIEDER DRIN: Unter 18 / Eltern -->
+      <div class="line"></div>
+      <p class="note">
+        <strong>Teilnahme unter 18 Jahren:</strong> Minderjährige benötigen eine schriftliche Einwilligung der Eltern
+        oder Erziehungsberechtigten.<br>
+        <a href="eltern-einwilligung-form.html" style="opacity:.9;text-decoration:underline;">
+          Eltern-Einwilligung herunterladen/ausfüllen
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="ueber">
+    <div class="wrap">
+      <div class="sectionHead">
+        <h2>Über Julian</h2>
+        <div class="hint">Ruhig. Klar. Ohne Floskeln.</div>
+      </div>
+
+      <div class="about">
+        <div class="card">
+          <h3>Haltung</h3>
+          <p>
+            Disziplin ist kein kurzfristiger Zustand. Disziplin ist ein System.
+            Training ist das Werkzeug – Struktur ist das Fundament.
+            Ich arbeite mit Athleten, die Verantwortung übernehmen und langfristig denken.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Wofür ich stehe</h3>
+          <ul>
+            <li>Struktur, die im Alltag funktioniert</li>
+            <li>Klare Prioritäten statt endloser Optionen</li>
+            <li>Konsequenz ohne Drama</li>
+            <li>Physische Präsenz als Ausdruck von Selbstführung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="sectionHead">
+        <h2>Bewerbung</h2>
+        <div class="hint">Wähle dein Modell und beschreibe kurz Ausgangslage + Ziel. Ich melde mich mit dem nächsten Schritt.</div>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card">
+          <form id="coachingForm" action="https://formspree.io/f/mlgbzloe" method="POST">
+            <input type="hidden" name="_subject" value="Neue Bewerbung – Coaching – juliankasch.de">
+            <input type="text" name="_gotcha" style="display:none">
+
+            <div>
+              <label for="track">Coaching-Modell</label>
+              <select id="track" name="track" required>
+                <option value="" disabled selected>Bitte auswählen…</option>
+                <option value="Foundation (Anfänger)">Foundation (Anfänger)</option>
+                <option value="Elite (Fortgeschrittene)">Elite (Fortgeschrittene)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Dein Name" required />
+            </div>
+
+            <div>
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" placeholder="name@email.de" required />
+            </div>
+
+            <div>
+              <label for="goal">Ziel & Ausgangslage</label>
+              <textarea
+                id="goal"
+                name="goal"
+                rows="4"
+                placeholder="Ziel, Trainingslevel (Jahre), Trainingswoche, aktueller Stand, Einschränkungen/Verletzungen …"
+                required></textarea>
+            </div>
+
+            <div>
+              <label for="why">Warum willst du strukturiert begleitet werden?</label>
+              <textarea
+                id="why"
+                name="why"
+                rows="3"
+                placeholder="Was soll sich in den nächsten 3–6 Monaten konkret verändern – und warum jetzt?"
+                required></textarea>
+            </div>
+
+            <div>
+              <label for="responsibility">Bist du bereit, Verantwortung für deine Umsetzung zu übernehmen?</label>
+              <textarea
+                id="responsibility"
+                name="responsibility"
+                rows="3"
+                placeholder="Ja / Nein – und warum?"
+                required></textarea>
+            </div>
+
+            <button class="btnPrimary" type="submit">Bewerbung absenden</button>
+
+            <div class="note">
+              Deine Bewerbung wird sicher über Formspree übermittelt.<br>
+              <small>Deine Angaben werden ausschließlich zur Bearbeitung deiner Bewerbung gemäß DSGVO verarbeitet.</small>
+              <br><br>
+              <small><strong>Unter 18?</strong> Dann wird eine schriftliche Einwilligung der Eltern/Erziehungsberechtigten benötigt.
+                <a href="eltern-einwilligung-form.html" style="opacity:.9;text-decoration:underline;">Eltern-Einwilligung</a>
+              </small>
+            </div>
+
+            <div class="formStatus"></div>
+          </form>
+
+          <script>
+          (function () {
+            const form = document.getElementById("coachingForm");
+            if (!form) return;
+
+            const btn  = form.querySelector('button[type="submit"]');
+            const note = form.querySelector(".formStatus");
+
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+
+              const gotcha = form.querySelector('input[name="_gotcha"]');
+              if (gotcha && gotcha.value.trim() !== "") return;
+
+              const oldText = btn ? btn.textContent : "";
+
+              if (btn) { btn.disabled = true; btn.textContent = "Sende…"; }
+              if (note) note.textContent = "Wird gesendet…";
+
+              try {
+                const res = await fetch(form.action, {
+                  method: "POST",
+                  body: new FormData(form),
+                  headers: { "Accept": "application/json" }
+                });
+
+                if (res.ok) {
+                  form.reset();
+                  if (note) note.textContent = "Danke! Deine Bewerbung wurde übermittelt.";
+                  setTimeout(() => { window.location.hash = "kontakt"; }, 900);
+                } else {
+                  if (note) note.textContent = "Senden hat nicht geklappt. Bitte später erneut versuchen.";
+                }
+              } catch (err) {
+                if (note) note.textContent = "Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.";
+              } finally {
+                if (btn) { btn.disabled = false; btn.textContent = oldText; }
+              }
+            });
+          })();
+          </script>
+        </div>
+
+        <div class="card">
+          <h3>Wichtig vorab</h3>
+          <p class="note">
+            <strong>Elite</strong> ist limitiert auf <strong>max. 10 aktive Athleten</strong> gleichzeitig.<br><br>
+            Für beide Modelle gilt: Ich brauche 3 Dinge:
+            <br/><br/>
+            1) Ziel & Ausgangslage<br/>
+            2) Trainingswoche (Tage & Zeit)<br/>
+            3) Einschränkungen/Verletzungen<br/><br/>
+            Dann bekommst du eine klare Einschätzung und den nächsten Schritt.
+          </p>
+
+          <div class="line"></div>
+
+          <p class="note">
+            <strong>E-Mail:</strong>
+            <a href="mailto:kasch.julian@icloud.com" style="opacity:.9">
+              kasch.julian@icloud.com
+            </a>
+            <br/>
+            <strong>Instagram:</strong>
+            <a href="https://www.instagram.com/juliankasch_"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="opacity:.9">
+              @juliankasch_
+            </a>
+            <br/>
+
+            <strong>TikTok:</strong>
+            <a href="https://www.tiktok.com/@_julian_kasch"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="opacity:.9">
+              @_julian_kasch
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="detail-modal" id="detailModal" aria-hidden="true">
+    <div class="detail-backdrop" data-close></div>
+
+    <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <div class="detail-head">
+        <div>
+          <div class="detail-kicker" id="detailKicker"></div>
+          <h3 class="detail-title" id="detailTitle"></h3>
+        </div>
+        <button class="detail-close" type="button" aria-label="Schließen" data-close>×</button>
+      </div>
+
+      <div class="detail-body" id="detailBody"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>© <span id="y"></span> Julian Kasch – Physique & Lifestyle Coaching</div>
+        <div>
+          <a href="impressum.html" style="margin-right:12px;">Impressum</a>
+          <a href="datenschutz.html" style="margin-right:12px;">Datenschutz</a>
+          <a href="agb.html" style="margin-right:12px;">AGB</a>
+          <!-- ✅ WIEDER DRIN -->
+          <a href="eltern-einwilligung-form.html" style="margin-right:12px;">Eltern-Einwilligung (Minderjährige)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const detailData = {
+      elite: {
+        kicker: "Elite Coaching • Premium & limitiert",
+        title: "Präzision & Führung",
+        body: `
+          <p><strong>Für fortgeschrittene Athleten</strong><br>
+          Elite ist für Menschen, die nicht mehr „Basics“ suchen – sondern Präzision, Führung und klare Entscheidungen.</p>
+
+          <h4>Fokus</h4>
+          <ul>
+            <li>Struktur als Lebensstil (nicht als Phase)</li>
+            <li>Präzise Anpassungen statt ständiger Neustart</li>
+            <li>Konsequente Umsetzung mit klaren Standards</li>
+          </ul>
+
+          <h4>Kapazität</h4>
+          <p>Maximal 10 aktive Plätze – Qualität vor Masse.</p>
+        `
+      },
+
+      foundation: {
+        kicker: "Foundation • Anfänger & sauberer Start",
+        title: "Basics, Routine, Konstanz",
+        body: `
+          <p><strong>Für 0–2 Jahre Trainingserfahrung</strong><br>
+          Foundation ist der strukturierte Einstieg: Du lernst die Grundlagen, setzt Routinen auf und entwickelst Konstanz.</p>
+
+          <h4>Worum es geht</h4>
+          <ul>
+            <li>Saubere Trainings-Basics (Plan, Technik, Progression)</li>
+            <li>Ernährungsgrundstruktur ohne Dogma</li>
+            <li>Routinen, die im Alltag funktionieren</li>
+          </ul>
+
+          <h4>Hinweis</h4>
+          <p><strong>Unter 18?</strong> Dann ist eine schriftliche Einwilligung der Eltern/Erziehungsberechtigten erforderlich.</p>
+        `
+      },
+
+      identity: {
+        kicker: "Entwicklung • Langfristige Perspektive",
+        title: "Mehr als Training",
+        body: `
+          <p><strong>Worum es wirklich geht</strong><br>
+          Training ist nicht das Ziel. Es ist das Werkzeug. Das Ziel ist Entwicklung – physisch und mental.</p>
+
+          <h4>Was sich verändert</h4>
+          <ul>
+            <li>Deine körperliche Präsenz</li>
+            <li>Deine Selbstführung</li>
+            <li>Deine Standards im Alltag</li>
+          </ul>
+
+          <h4>Langfristig</h4>
+          <p>Struktur wird Teil deiner Identität – nicht nur deines Trainingsplans. Weniger Kompromisse, mehr Richtung.</p>
+        `
+      },
+
+      prozess: {
+        kicker: "Ablauf • Wenige Schritte",
+        title: "So starten wir",
+        body: `
+          <p><strong>1) Bewerbung</strong><br>
+          Du wählst dein Modell und beschreibst Ausgangslage + Ziel.</p>
+
+          <p><strong>2) Abgleich</strong><br>
+          Wenn es passt, bekommst du den nächsten Schritt (kurzer Abgleich / Startdetails).</p>
+
+          <p><strong>3) Start</strong><br>
+          Wir setzen Struktur auf: Training, Ernährung, Routinen – klar und umsetzbar.</p>
+
+          <h4>Wichtig</h4>
+          <p>Elite ist limitiert. Foundation ist der saubere Einstieg. Beide folgen derselben Haltung: Struktur schlägt Chaos.</p>
+        `
+      }
+    };
+
+    const modal  = document.getElementById("detailModal");
+    const kicker = document.getElementById("detailKicker");
+    const title  = document.getElementById("detailTitle");
+    const body   = document.getElementById("detailBody");
+
+    function openModal(key){
+      const d = detailData[key];
+      if(!d) return;
+      kicker.textContent = d.kicker;
+      title.textContent  = d.title;
+      body.innerHTML     = d.body;
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-service]");
+      if(trigger){
+        openModal(trigger.getAttribute("data-service"));
+        return;
+      }
+      if(e.target.closest("[data-close]")){
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && modal.classList.contains("open")){
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
