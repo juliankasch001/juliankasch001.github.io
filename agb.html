@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AGB & Widerrufsrecht – Julian Kasch</title>
+
+  <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) und Widerrufsrecht für Coaching-Leistungen von Julian Kasch." />
+
+
+
+  <style>
+
+    :root{
+
+      --bg:#0b0e12;
+
+      --bg2:#0f141b;
+
+
+
+      --silver1:#F2F5F8;
+
+      --silver2:#C9D2DD;
+
+      --silver3:#8C98A6;
+
+
+
+      --accent:#4da3ff;
+
+      --accentSoft:rgba(77,163,255,.18);
+
+
+
+      --text:rgba(242,245,248,.92);
+
+      --muted:rgba(201,210,221,.78);
+
+
+
+      --line:rgba(140,152,166,.22);
+
+      --card:rgba(255,255,255,.045);
+
+      --card2:rgba(255,255,255,.06);
+
+
+
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+
+      --radius:22px;
+
+      --radius2:28px;
+
+      --max:1100px;
+
+    }
+
+
+
+    *{box-sizing:border-box}
+
+    html,body{height:100%}
+
+    body{
+
+      margin:0;
+
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+      color:var(--text);
+
+      background:
+
+        radial-gradient(1200px 700px at 25% 10%, rgba(242,245,248,.06), transparent 60%),
+
+        radial-gradient(900px 600px at 80% 30%, rgba(201,210,221,.04), transparent 55%),
+
+        radial-gradient(900px 520px at 72% 12%, var(--accentSoft), transparent 58%),
+
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #090b0f 100%);
+
+      letter-spacing:.2px;
+
+    }
+
+
+
+    a{color:inherit; text-decoration:none}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+
+
+    /* Topbar */
+
+    .topbar{
+
+      position:sticky; top:0; z-index:50;
+
+      backdrop-filter: blur(12px);
+
+      background: linear-gradient(180deg, rgba(11,14,18,.78), rgba(11,14,18,.46));
+
+      border-bottom:1px solid rgba(140,152,166,.18);
+
+    }
+
+    .nav{
+
+      display:flex; align-items:center; justify-content:space-between;
+
+      padding:14px 0;
+
+      gap:14px;
+
+    }
+
+    .brand{
+
+      display:flex; align-items:center; gap:10px;
+
+      font-weight:900; letter-spacing:1.6px;
+
+      text-transform:uppercase;
+
+      font-size:14px;
+
+      color:var(--silver1);
+
+      white-space:nowrap;
+
+    }
+
+    .brand .dot{
+
+      width:10px; height:10px; border-radius:50%;
+
+      background: linear-gradient(135deg, var(--accent), #9bc9ff);
+
+      box-shadow: 0 0 18px rgba(77,163,255,.55), 0 0 42px rgba(77,163,255,.20);
+
+    }
+
+    .links{
+
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      justify-content:flex-end;
+
+    }
+
+    .links a{padding:10px 10px; border-radius:12px}
+
+    .links a:hover{background:rgba(255,255,255,.04); color:var(--silver1)}
+
+
+
+    .cta{
+
+      display:inline-flex; align-items:center; justify-content:center;
+
+      padding:10px 14px; border-radius:14px;
+
+      border:1px solid rgba(201,210,221,.26);
+
+      background: linear-gradient(180deg, rgba(242,245,248,.10), rgba(255,255,255,.03));
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.38);
+
+      color:var(--silver1);
+
+      font-weight:800;
+
+      text-transform:uppercase;
+
+      letter-spacing:.9px;
+
+      font-size:12px;
+
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+
+      white-space:nowrap;
+
+    }
+
+    .cta:hover{
+
+      transform: translateY(-1px);
+
+      border-color: rgba(77,163,255,.45);
+
+      box-shadow: 0 0 0 1px rgba(77,163,255,.18), 0 12px 40px rgba(0,0,0,.48);
+
+    }
+
+
+
+    /* Page */
+
+    .page{padding:44px 0 26px}
+
+    .panel{
+
+      border:1px solid rgba(140,152,166,.20);
+
+      background: linear-gradient(180deg, var(--card2), rgba(255,255,255,.025));
+
+      border-radius: var(--radius2);
+
+      box-shadow: var(--shadow);
+
+      overflow:hidden;
+
+    }
+
+    .head{
+
+      padding:26px 26px 18px;
+
+      border-bottom:1px solid rgba(140,152,166,.18);
+
+      background: radial-gradient(900px 340px at 50% 0%, rgba(242,245,248,.08), rgba(255,255,255,.02) 55%);
+
+    }
+
+    h1{
+
+      margin:0 0 8px;
+
+      font-size:28px;
+
+      letter-spacing:1.1px;
+
+      text-transform:uppercase;
+
+      background: linear-gradient(180deg, var(--silver1), var(--silver2) 55%, var(--accent));
+
+      -webkit-background-clip:text;
+
+      background-clip:text;
+
+      color:transparent;
+
+    }
+
+    .sub{
+
+      margin:0;
+
+      color:var(--muted);
+
+      line-height:1.6;
+
+      font-size:14px;
+
+      max-width:85ch;
+
+    }
+
+
+
+    .content{
+
+      padding:22px 26px 10px;
+
+      display:grid;
+
+      grid-template-columns: 1fr 320px;
+
+      gap:16px;
+
+      align-items:start;
+
+    }
+
+
+
+    .card{
+
+      border:1px solid rgba(140,152,166,.18);
+
+      background: rgba(255,255,255,.03);
+
+      border-radius: var(--radius);
+
+      padding:18px;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+    }
+
+    .card h2{
+
+      margin:0 0 10px;
+
+      text-transform:uppercase;
+
+      letter-spacing:1px;
+
+      font-size:14px;
+
+      color:var(--silver2);
+
+    }
+
+    .card h3{
+
+      margin:18px 0 8px;
+
+      font-size:13px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.9px;
+
+      color:var(--silver2);
+
+    }
+
+    .card p, .card li{
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.65;
+
+    }
+
+    .card ul{margin:8px 0 0; padding-left:18px}
+
+    .line{
+
+      height:1px;
+
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+
+      opacity:.6;
+
+      margin:18px 0;
+
+    }
+
+
+
+    /* TOC */
+
+    .toc a{
+
+      display:block;
+
+      padding:10px 10px;
+
+      border-radius:12px;
+
+      border:1px solid rgba(140,152,166,.18);
+
+      background: rgba(255,255,255,.02);
+
+      color:var(--muted);
+
+      margin-bottom:10px;
+
+    }
+
+    .toc a:hover{
+
+      color:var(--silver1);
+
+      border-color: rgba(77,163,255,.45);
+
+      box-shadow: 0 0 0 1px rgba(77,163,255,.18);
+
+    }
+
+    .mini{
+
+      font-size:12px;
+
+      color:var(--muted);
+
+      line-height:1.5;
+
+      margin-top:10px;
+
+    }
+
+
+
+    footer{
+
+      padding:26px 0 36px;
+
+      border-top:1px solid rgba(140,152,166,.18);
+
+      color:var(--muted);
+
+      font-size:12px;
+
+      letter-spacing:.8px;
+
+      text-transform:uppercase;
+
+      margin-top:34px;
+
+    }
+
+    .foot{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    footer a:hover{color:var(--silver1)}
+
+
+
+    @media (max-width: 940px){
+
+      .content{grid-template-columns:1fr}
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <!-- TOPBAR -->
+
+  <div class="topbar">
+
+    <div class="wrap">
+
+      <div class="nav">
+
+        <a class="brand" href="index.html">
+
+          <span class="dot"></span>
+
+          <span>Julian Kasch</span>
+
+        </a>
+
+
+
+        <div class="links">
+
+          <a href="index.html">Startseite</a>
+
+          <a href="datenschutz.html">Datenschutz</a>
+
+          <a href="impressum.html">Impressum</a>
+
+          <a href="eltern-einwilligung.html">Eltern</a>
+
+          <a class="cta" href="index.html#kontakt">Coaching anfragen</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <main class="page">
+
+    <div class="wrap">
+
+      <div class="panel">
+
+        <div class="head">
+
+          <h1>AGB & Widerrufsrecht</h1>
+
+          <p class="sub">
+
+            Geltend für Coaching- und Beratungsleistungen (Präsenz & Online). Stand: <span id="stand"></span>.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="content">
+
+          <!-- MAIN -->
+
+          <div class="card" id="agb">
+
+            <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+
+
+
+            <h3 id="s1">1. Geltungsbereich</h3>
+
+            <p>
+              Diese AGB gelten für sämtliche Verträge über Online-Coaching-Leistungen zwischen
+              Julian Kasch (nachfolgend „Coach“/„Anbieter“) und dem jeweiligen Teilnehmer (nachfolgend „Kunde“),
+              unabhängig davon, ob einzelne Leistungen online oder in Präsenz erbracht werden.
+              Abweichende Bedingungen des Kunden werden nicht anerkannt.
+            </p>
+
+
+
+            <h3 id="s2">2. Vertragsgegenstand & Leistungsbeschreibung</h3>
+
+            <p>
+              Vertragsgegenstand ist die Erbringung individuell vereinbarter Coaching-Leistungen
+              im Bereich Training, Ernährung und strukturierte Leistungsentwicklung.
+              Es handelt sich um einen Dienstvertrag gemäß § 611 BGB. Ein bestimmter Erfolg wird nicht geschuldet.
+            </p>
+
+            <p><strong>Modelle / Leistungsumfang:</strong></p>
+
+            <p><strong>Foundation</strong> umfasst insbesondere:</p>
+            <ul>
+              <li>1x monatlicher 1:1 Call (ca. 45 Minuten)</li>
+              <li>Trainings- und Ernährungsgrundstruktur</li>
+              <li>Monatliche Anpassung</li>
+              <li>Support Mo–Fr</li>
+            </ul>
+
+            <p><strong>Elite</strong> umfasst insbesondere:</p>
+            <ul>
+              <li>2x monatlicher 1:1 Strategie-Call (ca. 45 Minuten)</li>
+              <li>Individuelle phasenorientierte Planung</li>
+              <li>Laufende Analyse & Anpassung</li>
+              <li>Support Mo–Fr</li>
+            </ul>
+
+            <p>
+              Die Elite-Betreuung ist auf maximal 10 aktive Teilnehmer gleichzeitig begrenzt.
+              Ein Anspruch auf Aufnahme besteht nicht.
+            </p>
+
+
+
+            <h3 id="s3">3. Vertragsschluss</h3>
+
+            <p>
+              Der Vertrag kommt durch Unterzeichnung des jeweiligen Coaching-Vertrags (Foundation oder Elite) zustande.
+              Der Beginn der Leistungserbringung erfolgt zum individuell vereinbarten Startdatum.
+            </p>
+
+
+
+            <h3 id="s4">4. Vergütung & Zahlungsbedingungen</h3>
+
+            <p><strong>Monatliche Vergütung:</strong></p>
+            <ul>
+              <li>Foundation: 179,00 € / Monat</li>
+              <li>Elite: 299,00 € / Monat</li>
+            </ul>
+
+            <p>
+              Die Zahlung erfolgt monatlich im Voraus.
+              Bei Zahlungsverzug ist der Anbieter berechtigt, Leistungen bis zur vollständigen Zahlung auszusetzen.
+              Eine Rückerstattung bereits gezahlter Beträge erfolgt nicht, sofern die Leistung ordnungsgemäß angeboten
+              oder erbracht wurde.
+            </p>
+
+
+
+            <h3 id="s5">5. Laufzeit, Kündigung, Termine</h3>
+
+            <p>
+              Die Mindestlaufzeit beträgt 3 Monate. Eine ordentliche Kündigung ist erstmals zum Ablauf der Mindestlaufzeit
+              mit einer Frist von 14 Tagen zum Laufzeitende möglich. Kündigungen bedürfen der Textform (z. B. E-Mail).
+              Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.
+            </p>
+
+            <p>
+              Vereinbarte Termine (z. B. Calls) sind verbindlich. Eine Absage/Verschiebung sollte so früh wie möglich erfolgen.
+              Bei kurzfristiger Absage (unter 24 Stunden) oder Nichterscheinen besteht kein Anspruch auf Ersatztermin,
+              sofern nicht ausdrücklich etwas anderes vereinbart wird.
+            </p>
+
+
+
+            <h3 id="s6">6. Haftung & Gesundheit</h3>
+
+            <p>
+              Coaching ersetzt keine medizinische Untersuchung oder Behandlung. Der Kunde ist dafür verantwortlich,
+              vor Trainings- oder Ernährungsumstellungen ärztlichen Rat einzuholen, sofern gesundheitliche Risiken
+              bestehen oder unklar sind. Die Teilnahme erfolgt auf eigene Verantwortung.
+            </p>
+
+            <p>
+              Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit
+              haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und
+              beschränkt auf den vorhersehbaren, vertragstypischen Schaden.
+              Eine Haftung für Trainingsverletzungen ist ausgeschlossen, sofern keine grobe Fahrlässigkeit vorliegt.
+            </p>
+
+
+
+            <h3 id="s7">7. Online-Coaching & technische Voraussetzungen</h3>
+
+            <p>
+              Online-Leistungen erfolgen z. B. per Video/Telefon/Chat. Der Kunde ist für eine funktionierende
+              Internetverbindung und geeignete Endgeräte verantwortlich. Technische Störungen außerhalb des
+              Einflussbereichs des Anbieters begründen keinen Anspruch auf Rückerstattung, sofern die Leistung
+              nachholbar ist.
+            </p>
+
+
+
+            <h3 id="s8">8. Vertraulichkeit & Datenschutz</h3>
+
+            <p>
+              Beide Parteien verpflichten sich, vertrauliche Informationen, die im Rahmen der Zusammenarbeit
+              bekannt werden, nicht unbefugt an Dritte weiterzugeben.
+            </p>
+
+            <p>
+              Personenbezogene Daten werden ausschließlich zur Vertragserfüllung verarbeitet.
+              Gesundheitsbezogene Daten werden nur mit ausdrücklicher Einwilligung verarbeitet.
+              Es gelten ergänzend die Datenschutzbestimmungen auf der Website.
+            </p>
+
+
+
+            <h3 id="s9">9. Minderjährige & Schlussbestimmungen</h3>
+
+            <p>
+              Teilnehmer unter 18 Jahren benötigen die schriftliche Einwilligung der Erziehungsberechtigten.
+            </p>
+
+            <p>
+              Es gilt deutsches Recht. Sollte eine Bestimmung dieser AGB unwirksam sein, bleibt die Wirksamkeit
+              der übrigen Bestimmungen unberührt. Gerichtsstand ist – soweit gesetzlich zulässig – der Sitz des Anbieters.
+            </p>
+
+
+
+            <div class="line"></div>
+
+
+
+            <h2 id="widerruf">Widerrufsrecht</h2>
+
+
+
+            <h3 id="w1">1. Widerrufsbelehrung</h3>
+
+            <p>
+              Verbraucher haben grundsätzlich ein gesetzliches Widerrufsrecht. Die Widerrufsfrist beträgt
+              14 Tage ab Vertragsschluss, sofern nicht gesetzlich etwas anderes bestimmt ist.
+            </p>
+
+
+
+            <h3 id="w2">2. Ausübung des Widerrufs</h3>
+
+            <p>
+              Um Ihr Widerrufsrecht auszuüben, müssen Sie den Anbieter mittels einer eindeutigen Erklärung
+              (z. B. per E-Mail) über Ihren Entschluss informieren, den Vertrag zu widerrufen.
+            </p>
+
+            <p>
+              Kontakt (E-Mail): <strong>coaching@juliankasch.de</strong>
+            </p>
+
+
+
+            <h3 id="w3">3. Folgen des Widerrufs</h3>
+
+            <p>
+              Wenn Sie diesen Vertrag widerrufen, sind empfangene Zahlungen nach Maßgabe der gesetzlichen
+              Vorschriften zu erstatten. Wurden Leistungen bereits erbracht, kann Wertersatz anfallen.
+            </p>
+
+
+
+            <h3 id="w4">4. Erlöschen / Wertersatz bei Dienstleistungen</h3>
+
+            <p>
+              Das Widerrufsrecht kann bei Dienstleistungen erlöschen, wenn der Anbieter die Leistung vollständig
+              erbracht hat und der Kunde zuvor ausdrücklich zugestimmt hat, dass der Anbieter vor Ablauf der
+              Widerrufsfrist mit der Ausführung beginnt, und der Kunde seine Kenntnis vom Erlöschen des
+              Widerrufsrechts bestätigt hat.
+            </p>
+
+            <p class="mini">
+              Hinweis: Für individuell erstellte Leistungen, sofort beginnende Leistungen oder vollständig erbrachte Dienstleistungen
+              können gesetzliche Regelungen zu Wertersatz/Erlöschen des Widerrufsrechts greifen.
+            </p>
+
+          </div>
+
+
+
+          <!-- SIDEBAR -->
+
+          <aside class="card toc">
+
+            <h2>Navigation</h2>
+
+            <a href="#agb">AGB</a>
+
+            <a href="#s1">1. Geltungsbereich</a>
+
+            <a href="#s4">4. Vergütung</a>
+
+            <a href="#s5">5. Laufzeit/Termine</a>
+
+            <a href="#s6">6. Haftung</a>
+
+            <a href="#widerruf">Widerrufsrecht</a>
+
+            <a href="#w2">Widerruf ausüben</a>
+
+            <a href="#w4">Erlöschen/Wertersatz</a>
+
+
+
+            <div class="mini">
+
+              Quicklinks:
+
+              <br><br>
+
+              <a href="impressum.html">→ Impressum</a>
+
+              <a href="datenschutz.html">→ Datenschutz</a>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+
+
+      <footer>
+
+        <div class="wrap">
+
+          <div class="foot">
+
+            <div>© <span id="y"></span> Julian Kasch – Bodybuilding & Coaching</div>
+
+            <div>
+
+              <a href="impressum.html" style="margin-right:12px;">Impressum</a>
+
+              <a href="datenschutz.html" style="margin-right:12px;">Datenschutz</a>
+
+              <a href="agb.html" style="margin-right:12px;">AGB</a>
+
+              <a href="eltern-einwilligung.html">Eltern-Einwilligung</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+
+
+    </div>
+
+  </main>
+
+
+
+  <script>
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+
+
+    const d = new Date();
+
+    const fmt = new Intl.DateTimeFormat('de-DE', { year:'numeric', month:'2-digit', day:'2-digit' });
+
+    document.getElementById("stand").textContent = fmt.format(d);
+
+  </script>
+
+</body>
+
+</html>
